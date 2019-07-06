@@ -8,4 +8,11 @@ public class HttpRequestBody {
     private String bodyString;
 
 
+    public String getBodyString() {
+        return bodyString;
+    }
+
+    public void setBodyString(String bodyString) {
+        this.bodyString = bodyString;
+    }
 }

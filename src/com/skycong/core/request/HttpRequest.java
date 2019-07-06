@@ -27,6 +27,8 @@ public class HttpRequest {
 
     private HttpRequestHeader header;
 
+    private HttpRequestBody requestBody;
+
     public HttpProtocol getProtocol() {
         return protocol;
     }
@@ -57,5 +59,13 @@ public class HttpRequest {
 
     public void setHeader(HttpRequestHeader header) {
         this.header = header;
+    }
+
+    public HttpRequestBody getRequestBody() {
+        return requestBody;
+    }
+
+    public void setRequestBody(HttpRequestBody requestBody) {
+        this.requestBody = requestBody;
     }
 }

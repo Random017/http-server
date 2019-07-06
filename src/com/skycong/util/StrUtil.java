@@ -18,7 +18,9 @@ public class StrUtil {
 
     public static final String BLANK_SPACE = " ";
 
-    public static final String SPLITSTR = "\r\n";
+    public static final String LINE_SPLIT = "\r\n";
+
+    public static final String BLOCK_SPLIT = "\r\n\r\n";
 
 
     /**

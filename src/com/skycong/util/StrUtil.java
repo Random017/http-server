@@ -15,6 +15,7 @@ public class StrUtil {
     public static final String CHARSET = "UTF-8";
 
     public static final String ARRAY_SEPARATOR = ",";
+    public static final String HEADER_SPLIT = ":";
 
     public static final String BLANK_SPACE = " ";
 

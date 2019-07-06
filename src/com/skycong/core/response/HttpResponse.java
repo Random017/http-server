@@ -14,6 +14,40 @@ public class HttpResponse {
 
     private HttpStatus httpStatus;
 
-    private Map<String, String> headers;
+    private HttpResponseHeader headers;
+
+    private HttpResponseBody httpResponseBody;
+
+    public HttpProtocol getProtocol() {
+        return protocol;
+    }
+
+    public void setProtocol(HttpProtocol protocol) {
+        this.protocol = protocol;
+    }
+
+    public HttpStatus getHttpStatus() {
+        return httpStatus;
+    }
+
+    public void setHttpStatus(HttpStatus httpStatus) {
+        this.httpStatus = httpStatus;
+    }
+
+    public HttpResponseHeader getHeaders() {
+        return headers;
+    }
+
+    public void setHeaders(HttpResponseHeader headers) {
+        this.headers = headers;
+    }
+
+    public HttpResponseBody getHttpResponseBody() {
+        return httpResponseBody;
+    }
+
+    public void setHttpResponseBody(HttpResponseBody httpResponseBody) {
+        this.httpResponseBody = httpResponseBody;
+    }
 
 }

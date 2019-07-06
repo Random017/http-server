@@ -14,7 +14,7 @@ import java.net.Socket;
 public class Run {
 
     public static void main(String[] args) throws IOException {
-        int port = 80;
+        int port = 8080;
         ServerSocket server = new ServerSocket();
         server.bind(new InetSocketAddress(port));
         while (true) {
@@ -22,5 +22,4 @@ public class Run {
             ThreadPool.excute(new HttpRequestHandler(client));
         }
     }
-
 }

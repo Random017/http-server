@@ -9,7 +9,6 @@ import com.skycong.constant.HttpProtocol;
 public class HttpRequest {
 
     // s = GET / HTTP/1.1
-
     // s = Host: 127.0.0.1
     // s = Connection: keep-alive
     // s = Cache-Control: max-age=0

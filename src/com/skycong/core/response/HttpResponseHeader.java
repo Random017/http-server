@@ -10,6 +10,15 @@ import java.util.Set;
  */
 public class HttpResponseHeader extends HashMap<String, String> {
 
+
+    public HttpResponseHeader() {
+    }
+
+    public HttpResponseHeader(String name, String value) {
+        setHeader(name, value);
+    }
+
+
     public void setHeader(String name, String value) {
         put(name, value);
     }

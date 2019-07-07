@@ -14,10 +14,10 @@ public class ThreadPool {
             200,
             60,
             TimeUnit.SECONDS,
-            new ArrayBlockingQueue<Runnable>(600));
+            new ArrayBlockingQueue<>(600));
 
 
-    public static void excute(Runnable runnable) {
+    public static void execute(Runnable runnable) {
         EXECUTOR.submit(runnable);
     }
 

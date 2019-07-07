@@ -19,7 +19,7 @@ public class Run {
         server.bind(new InetSocketAddress(port));
         while (true) {
             Socket client = server.accept();
-            ThreadPool.excute(new HttpRequestHandler(client));
+            ThreadPool.execute(new HttpRequestHandler(client));
         }
     }
 }

@@ -14,29 +14,28 @@ public class StrUtil {
 
     public static final String CHARSET = "UTF-8";
 
+
     public static final String ARRAY_SEPARATOR = ",";
-    public static final String HEADER_SPLIT = ":";
-
-    public static final String BLANK_SPACE = " ";
-
-    public static final String LINE_SPLIT = "\r\n";
-
-    public static final String BLOCK_SPLIT = "\r\n\r\n";
-
 
     /**
-     * 默认以 {@linkplain StrUtil#ARRAY_SEPARATOR} 分割文本，并剔除空str
-     *
-     * @param text
-     * @return
+     * header 中的分隔符冒号
      */
-    public static String[] splitByArraySeparator(String text) {
-        return split(text, ARRAY_SEPARATOR);
-    }
+    public static final String HEADER_SPLIT = ":";
 
-    public static String[] splitByBlankSpace(String text) {
-        return split(text, BLANK_SPACE);
-    }
+    /**
+     * 空格
+     */
+    public static final String BLANK_SPACE = " ";
+
+    /**
+     * 行 分隔符
+     */
+    public static final String LINE_SPLIT = "\r\n";
+
+    /**
+     * 块 分隔符
+     */
+    public static final String BLOCK_SPLIT = "\r\n\r\n";
 
     /**
      * 自定义 分割符，并剔除空的str
@@ -51,7 +50,6 @@ public class StrUtil {
         String[] strings = text.split(separator);
         return Arrays.stream(strings).filter(s -> !s.isEmpty()).toArray(String[]::new);
     }
-
 
     /**
      * 将byte 数组转换为十六进制 char 数组

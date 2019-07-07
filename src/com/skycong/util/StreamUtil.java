@@ -1,6 +1,5 @@
 package com.skycong.util;
 
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -10,6 +9,12 @@ import java.io.InputStream;
  */
 public class StreamUtil {
 
+    /**
+     * 从 inputStream 读取数据，以字符格式返回
+     *
+     * @param inputStream inputStream
+     * @return string
+     */
     public static String readFromInputStream(InputStream inputStream) {
         ByteArrayOutputStream baos = null;
         try {
@@ -34,32 +39,5 @@ public class StreamUtil {
                 e.printStackTrace();
             }
         }
-
-    }
-
-
-    public static InputStream copy(InputStream inputStream) {
-        ByteArrayOutputStream baos = null;
-        try {
-            baos = new ByteArrayOutputStream();
-            byte[] buffer = new byte[1024];
-            int len;
-            while ((len = inputStream.read(buffer)) > -1) {
-                baos.write(buffer, 0, len);
-            }
-            baos.flush();
-            new ByteArrayInputStream(baos.toByteArray());
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                if (baos != null) {
-                    baos.close();
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        return null;
     }
 }

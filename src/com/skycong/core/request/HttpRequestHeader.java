@@ -7,6 +7,14 @@ import java.util.HashMap;
  */
 public class HttpRequestHeader extends HashMap<String, String> {
 
+
+    public HttpRequestHeader(){}
+
+    public HttpRequestHeader(String name,String value){
+        setHeader(name, value);
+    }
+
+
     public void setHeader(String name, String value) {
         put(name, value);
     }

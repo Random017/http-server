@@ -10,11 +10,11 @@ import java.util.concurrent.TimeUnit;
 public class ThreadPool {
 
     private static final ThreadPoolExecutor EXECUTOR = new ThreadPoolExecutor(
-            20,
-            200,
-            60,
+            500,
+            2000,
+            10,
             TimeUnit.SECONDS,
-            new ArrayBlockingQueue<>(600));
+            new ArrayBlockingQueue<>(10000));
 
 
     public static void execute(Runnable runnable) {
@@ -23,5 +23,10 @@ public class ThreadPool {
 
     public static void close() {
         EXECUTOR.shutdown();
+    }
+
+
+    public static void main(String[] args) {
+
     }
 }

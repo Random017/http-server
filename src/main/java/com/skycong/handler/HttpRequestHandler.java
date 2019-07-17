@@ -9,6 +9,7 @@ import com.skycong.core.request.HttpRequestHeader;
 import com.skycong.core.response.HttpResponse;
 import com.skycong.core.response.HttpResponseBody;
 import com.skycong.core.response.HttpResponseHeader;
+import com.skycong.run.test.Test;
 import com.skycong.util.StrUtil;
 import com.skycong.util.StreamUtil;
 
@@ -66,32 +67,15 @@ public class HttpRequestHandler implements Runnable {
     }
 
 
-    private HttpResponse temmmmmmmmmmm() {
-        HttpResponse httpResponse = new HttpResponse();
-        httpResponse.setProtocol(HttpProtocol.HTTP_1_1);
-        httpResponse.setHttpStatus(HttpStatus.OK);
-        HttpResponseHeader httpResponseHeader = new HttpResponseHeader();
-        httpResponseHeader.put("head1", "sfasasfsaf");
-        httpResponseHeader.put("head3", "sfasasfsaf");
-        httpResponseHeader.put("token", "sfasasfsd34234234af");
-        httpResponseHeader.put("content-type", "text/plan;charset=utf-8");
-        httpResponse.setHeaders(httpResponseHeader);
-        HttpResponseBody httpResponseBody = new HttpResponseBody();
-        httpResponseBody.setResponseString("我爱王其");
-        httpResponse.setHttpResponseBody(httpResponseBody);
-
-
-        return httpResponse;
-    }
-
-
     @Override
     public void run() {
         try {
             HttpRequest httpRequest = getHttpRequest();
             System.out.println("httpRequest = " + httpRequest);
             // do something
-            setResponse(temmmmmmmmmmm());
+            HttpResponse httpResponse = new HttpResponse();
+            new Test().service(httpRequest,httpResponse);
+            setResponse(httpResponse);
         } finally {
             try {
                 request.close();
@@ -100,7 +84,6 @@ public class HttpRequestHandler implements Runnable {
             }
         }
     }
-
 
     private HttpRequest resolveRequestFromRequestString(String requestString) {
         HttpRequest httpRequest = new HttpRequest();

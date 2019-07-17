@@ -67,4 +67,16 @@ public class HttpRequest {
     public void setRequestBody(HttpRequestBody requestBody) {
         this.requestBody = requestBody;
     }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("HttpRequest{");
+        sb.append("protocol=").append(protocol);
+        sb.append(", method=").append(method);
+        sb.append(", requestUri='").append(requestUri).append('\'');
+        sb.append(", header=").append(header);
+        sb.append(", requestBody=").append(requestBody);
+        sb.append('}');
+        return sb.toString();
+    }
 }
